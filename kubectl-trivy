@@ -1,0 +1,10 @@
+#! /bin/bash
+
+function scan {
+  trivy $1
+}
+
+images=$(kubectl get "$@" -oyaml | sed -nE 's@[^\w]*image: (.+)@\1@p')
+while read -r image; do
+  scan "$image"
+done <<< "$images"
