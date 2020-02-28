@@ -14,6 +14,7 @@ kubectl trivy pod mypod
 kubectl trivy pod mypod -n mynamespace
 kubectl trivy pods
 kubectl trivy pods -n mynamespace
+kubectl trivy pods mypod myotherpod
 kubectl trivy deployment mydeployment
 kubectl trivy job myjob
 ```
@@ -27,4 +28,4 @@ Download the file `kubectl-trivy` to somewhere on your path
 1. Trivy
 1. bash
 1. sed
-
+1. uniq
